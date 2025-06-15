@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="assets/LogoScalia.png" alt="Logo Scalia" width="200"/>
+  <img src="Assets/LogoScalia.png" alt="Logo Scalia" width="200"/>
 </p>
 
 # 🎵 Scalia – Biblioteca Musical Interactiva
