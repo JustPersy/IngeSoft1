@@ -1,3 +1,8 @@
+
+<p align="center">
+  <img src="assets/LogoScalia.png" alt="Logo Scalia" width="200"/>
+</p>
+
 # 🎵 Scalia – Biblioteca Musical Interactiva
 
 ---
@@ -23,7 +28,7 @@ Crear una aplicación sencilla y funcional que permita:
 ---
 
 
-## Integrantes activos (y aportando 😐):
+## Integrantes activos:
 
 
 - Andrés Ramírez — [aramirezfa@unal.edu.co](mailto:aramirezfa@unal.edu.co)
