@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" spacing="20" styleClass="vbox" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.scalia.controllers.MainController">
+   <children>
+      <Text styleClass="title" text="Scalia - Teoría Musical" />
+      <Text styleClass="subtitle" text="Selecciona un módulo para comenzar" />
+      
+      <GridPane alignment="CENTER" hgap="20" vgap="20" maxWidth="600">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="180.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="180.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button fx:id="theoryButton" text="🎼 Teoría Musical" onAction="#openTheory" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Button fx:id="instrumentsButton" text="🎹 Instrumentos" onAction="#openInstruments" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Button fx:id="chordsButton" text="🔊 Acordes" onAction="#openChords" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Button fx:id="tunerButton" text="🎧 Afinador" onAction="#openTuner" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="tuningsButton" text="🎵 Afinaciones" onAction="#openTunings" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Button fx:id="usersButton" text="👤 Usuarios" onAction="#openUsers" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      
+      <HBox alignment="CENTER" spacing="10">
+         <children>
+            <Button fx:id="logoutButton" text="Cerrar Sesión" onAction="#handleLogout" />
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox> 
