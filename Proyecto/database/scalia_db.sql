@@ -1,3 +1,4 @@
+-- Active: 1752108425606@@127.0.0.1@3306@scalia_db
 -- Scalia Music Theory Application Database Schema
 -- Created by: Juan Manuel Cristancho Álvarez
 
@@ -5,12 +6,15 @@
 CREATE DATABASE IF NOT EXISTS scalia_db;
 USE scalia_db;
 
+
 -- Users table for authentication
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) UNIQUE NOT NULL,
-    password VARCHAR(255) NOT NULL, -- Will store hashed passwords
-    email VARCHAR(100) UNIQUE,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -70,5 +74,7 @@ INSERT INTO instruments (name, category_id, family, description) VALUES
 ('Drums', 3, 'Percussion', 'A percussion instrument consisting of a membrane stretched over a frame');
 
 -- Insert a test user (password: 'test123' - in real app, this should be hashed)
-INSERT INTO users (username, password, email) VALUES
-('testuser', 'test123', 'test@example.com'); 
+INSERT INTO users (username, email, password, first_name, last_name) VALUES
+('testuser', 'test@example.com', 'test123', 'Test', 'User');
+
+select * from users;

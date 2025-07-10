@@ -16,7 +16,7 @@ public class DatabaseConnection {
     // Database configuration
     private static final String URL = "jdbc:mysql://localhost:3306/scalia_db";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = ""; // Set your MySQL password here
+    private static final String PASSWORD = "1234"; // Set your MySQL password here
     
     private static Connection connection = null;
     
