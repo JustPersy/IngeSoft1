@@ -91,9 +91,12 @@ Actualmente se están ejecutando las siguientes tareas:
 
 ## 🧠 Autores y contacto
 
-> Juan Manuel Cristancho Álvarez  
+> Andrés Ramírez — [aramirezfa@unal.edu.co](mailto:aramirezfa@unal.edu.co)
+> Cristian Castillo — [crcastillo@unal.edu.co](mailto:crcastillo@unal.edu.co)
+> Nathalia Chaves — [nachavesp@unal.edu.co](mailto:nachavesp@unal.edu.co)
+> Juan Cristancho — [jcristanchoa@unal.edu.co](mailto:jcristanchoa@unal.edu.co)
 > Proyecto académico para Ingeniería de Software I  
-> Universidad - 2025  
+> Universidad Nacional de Colombia - 2025  
 
 ---
 
