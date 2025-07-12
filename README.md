@@ -1,3 +1,8 @@
+
+<p align="center">
+  <img src="./assets/LogoScalia.png" alt="Logo de Scalia" width="180"/>
+</p>
+
 # 🎵 Scalia - Aplicación de escritorio para teoría musical e instrumentos
 
 Scalia es una aplicación de escritorio educativa e interactiva diseñada para estudiantes, músicos autodidactas y docentes. Su objetivo es ofrecer un entorno intuitivo para explorar teoría musical, instrumentos, acordes, afinaciones y más.
