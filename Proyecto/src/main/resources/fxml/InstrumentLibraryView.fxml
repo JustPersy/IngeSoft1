@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.scalia.controllers.InstrumentLibraryController">
+
+    <top>
+        <Label text="Biblioteca de Instrumentos" styleClass="title" BorderPane.alignment="CENTER"/>
+    </top>
+
+    <center>
+        <Label text="Aquí irá el contenido de la biblioteca..." BorderPane.alignment="CENTER"/>
+    </center>
+
+    <bottom>
+        <Button text="Volver al menú principal"
+                onAction="#handleBackToMenu"
+                maxWidth="200"
+                BorderPane.alignment="CENTER"
+                styleClass="back-button"
+        />
+    </bottom>
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+</BorderPane>

@@ -24,8 +24,22 @@ public class MainController {
 
     @FXML
     private void openInstruments() {
-        showModuleMessage("Instrumentos", "Biblioteca de instrumentos en desarrollo");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/InstrumentLibraryView.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = Main.getPrimaryStage();
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("/css/styles.css").toExternalForm());
+
+            stage.setScene(scene);
+            stage.setTitle("Scalia - Biblioteca de Instrumentos");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
 
     @FXML
     private void openChords() {
