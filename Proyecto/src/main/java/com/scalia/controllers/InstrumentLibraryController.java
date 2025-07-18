@@ -1,31 +1,38 @@
 package com.scalia.controllers;
-
+import com.scalia.dao.InstrumentDAO;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-import com.scalia.Main;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import com.scalia.models.Instrument;
 
-import java.io.IOException;
 
 public class InstrumentLibraryController {
 
+    @FXML private TableView<Instrument> instrumentTable;
+    @FXML private TableColumn<Instrument, String> nameColumn;
+    @FXML private TableColumn<Instrument, String> typeColumn;
+    @FXML private TableColumn<Instrument, String> descriptionColumn;
+    @FXML private TableColumn<Instrument, String> tuningColumn;
+
+    private boolean initialized = false;
+
     @FXML
-    private void handleBackToMenu() {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/MainView.fxml"));
-            Parent root = loader.load();
+    public void initialize() {
+        if (initialized) return; // 🔒 Evita recargar múltiples veces
 
-            Stage stage = Main.getPrimaryStage();
-            Scene scene = new Scene(root);
-            scene.getStylesheets().add(getClass().getResource("/css/styles.css").toExternalForm());
+        // Configurar columnas
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
+        descriptionColumn.setCellValueFactory(new PropertyValueFactory<>("description"));
+        tuningColumn.setCellValueFactory(new PropertyValueFactory<>("tuningStandard"));
 
-            stage.setScene(scene);
-            stage.setTitle("Scalia - Menú Principal");
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        // Limpiar y cargar datos
+        instrumentTable.setItems(javafx.collections.FXCollections.observableArrayList(
+                InstrumentDAO.getAllInstruments()
+        ));
+
+
+        initialized = true;
     }
 }
