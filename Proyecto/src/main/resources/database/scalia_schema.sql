@@ -5,6 +5,14 @@
 CREATE DATABASE IF NOT EXISTS scalia_db;
 USE scalia_db;
 
+-- START: Drop tables if they exist (Orden inverso para manejar dependencias de FOREIGN KEY)
+DROP TABLE IF EXISTS user_progress;
+DROP TABLE IF EXISTS tunings;
+DROP TABLE IF EXISTS chords;
+DROP TABLE IF EXISTS theory_concepts;
+DROP TABLE IF EXISTS instruments;
+-- END: Drop tables
+
 -- Users table
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -112,4 +120,4 @@ INSERT INTO chords (name, root_note, chord_type, notes, fingering) VALUES
 ('Fa Mayor', 'F', 'Major', '["F", "A", "C"]', '{"positions": [{"strings": [1,2,3], "frets": [1,1,1]}]}'),
 ('Sol Mayor', 'G', 'Major', '["G", "B", "D"]', '{"positions": [{"strings": [1,2,3], "frets": [3,3,3]}]}'),
 ('La Mayor', 'A', 'Major', '["A", "C#", "E"]', '{"positions": [{"strings": [1,2,3], "frets": [0,2,2]}]}'),
-('Si Mayor', 'B', 'Major', '["B", "D#", "F#"]', '{"positions": [{"strings": [1,2,3], "frets": [2,4,4]}]}'); 
+('Si Mayor', 'B', 'Major', '["B", "D#", "F#"]', '{"positions": [{"strings": [1,2,3], "frets": [2,4,4]}]}');
