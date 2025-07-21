@@ -11,44 +11,66 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.scalia.controllers.InstrumentLibraryController"
-            prefHeight="600" prefWidth="800">
+            prefHeight="600" prefWidth="800" styleClass="root" stylesheets="@../css/styles.css">
     <children>
-        <StackPane AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
-                   AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+        <VBox alignment="TOP_CENTER" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+              AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" spacing="10">
+            <padding>
+                <Insets top="20" left="20" right="20" bottom="20"/>
+            </padding>
 
-            <VBox spacing="10"
-                  alignment="TOP_CENTER"  StackPane.alignment="TOP_CENTER"> <padding>
-                <Insets top="20" left="20" right="20" bottom="20"/> </padding>
+            <Label text="Instrument Library"
+                   styleClass="title-label"
+                   alignment="CENTER" maxWidth="Infinity">
+                <VBox.margin>
+                    <Insets bottom="30" />
+                </VBox.margin>
+            </Label>
 
-                <Label text="Instrument Library"
-                       style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #333;"
-                       alignment="CENTER"  maxWidth="Infinity"> <VBox.margin>
-                    <Insets bottom="30" /> </VBox.margin>
-                </Label>
+            <HBox spacing="20.0" VBox.vgrow="ALWAYS">
 
-                <GridPane fx:id="instrumentGridPane"
-                          hgap="30" vgap="30"  alignment="CENTER"  maxWidth="Infinity" maxHeight="Infinity"
-                          VBox.vgrow="ALWAYS"> <columnConstraints>
-                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
-                    <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
-                </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints vgrow="SOMETIMES" percentHeight="50.0" />
-                        <RowConstraints vgrow="SOMETIMES" percentHeight="50.0" />
-                    </rowConstraints>
+                <VBox spacing="10" HBox.hgrow="ALWAYS">
+                    <GridPane fx:id="instrumentGridPane"
+                              hgap="30" vgap="30" alignment="TOP_CENTER"
+                              maxWidth="Infinity" maxHeight="Infinity"
+                              VBox.vgrow="ALWAYS">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" percentWidth="50.0" />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints vgrow="SOMETIMES" minHeight="10.0" prefHeight="100.0" />
+                            <RowConstraints vgrow="SOMETIMES" minHeight="10.0" prefHeight="100.0" />
+                            <RowConstraints vgrow="SOMETIMES" minHeight="10.0" prefHeight="100.0" />
+                            <RowConstraints vgrow="SOMETIMES" minHeight="10.0" prefHeight="100.0" />
+                            <RowConstraints vgrow="SOMETIMES" minHeight="10.0" prefHeight="100.0" />
+                        </rowConstraints>
+                    </GridPane>
+                </VBox>
 
-                </GridPane>
+                <VBox fx:id="detailPanel" spacing="10.0" alignment="TOP_LEFT" prefWidth="300" styleClass="detail-panel">
+                    <Label text="Instrument Details" styleClass="detail-title-label"/>
+                    <Label fx:id="detailNameLabel"/>
+                    <Label fx:id="detailTypeLabel"/>
+                    <Label fx:id="detailDescriptionLabel"/>
+                    <Label fx:id="detailTuningStandardLabel"/>
+                    <VBox.margin>
+                        <Insets top="0.0" />
+                    </VBox.margin>
+                </VBox>
 
-            </VBox>
-
-            <HBox StackPane.alignment="BOTTOM_LEFT">
-                <Button text="Volver al Menú Principal" onAction="#handleBackToMainMenu" styleClass="back-button"/>
-                <padding>
-                    <Insets bottom="20" left="20" right="20"/> </padding>
             </HBox>
 
-        </StackPane>
+            <HBox alignment="BOTTOM_LEFT" VBox.vgrow="NEVER">
+                <Button text="Volver al Menú Principal" onAction="#handleBackToMainMenu" styleClass="back-button"/>
+                <padding>
+                    <Insets top="20" bottom="0" left="0" right="0"/>
+                </padding>
+            </HBox>
+
+        </VBox>
     </children>
 </AnchorPane>
