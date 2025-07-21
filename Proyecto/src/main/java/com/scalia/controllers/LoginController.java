@@ -28,6 +28,9 @@ public class LoginController {
     private Button loginButton;
 
     @FXML
+    private Button guestButton;
+
+    @FXML
     private Label errorLabel;
 
     @FXML
@@ -63,6 +66,20 @@ public class LoginController {
         } else {
             showError("Usuario o contraseña incorrectos");
         }
+    }
+
+    /**
+     * Handle guest login button click
+     */
+    @FXML
+    private void handleGuestLogin() {
+        // Crear usuario invitado
+        User guestUser = new User();
+        guestUser.setUsername("Invitado");
+        guestUser.setGuest(true);
+        // Guardar el usuario invitado en algún lugar accesible (por ejemplo, Main o un UserSession)
+        Main.setCurrentUser(guestUser);
+        navigateToMainView();
     }
 
     /**

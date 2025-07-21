@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 // import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import com.scalia.models.User;
 
 /**
  * Main application class for Scalia - Music Theory Desktop Application
@@ -18,6 +19,7 @@ import java.io.IOException;
 public class Main extends Application {
 
     private static Stage primaryStage;
+    private static User currentUser;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -48,6 +50,22 @@ public class Main extends Application {
      */
     public static Stage getPrimaryStage() {
         return primaryStage;
+    }
+
+    /**
+     * Get the current user
+     * @return The current user
+     */
+    public static User getCurrentUser() {
+        return currentUser;
+    }
+
+    /**
+     * Set the current user
+     * @param user The user to set as current
+     */
+    public static void setCurrentUser(User user) {
+        currentUser = user;
     }
 
     /**

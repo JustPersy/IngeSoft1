@@ -21,6 +21,7 @@
             <Label fx:id="errorLabel" styleClass="error-label" text="" visible="false" />
             
             <Button fx:id="loginButton" text="Iniciar Sesión" onAction="#handleLogin" />
+            <Button fx:id="guestButton" text="Entrar como invitado" onAction="#handleGuestLogin" />
             
             <HBox alignment="CENTER" spacing="5">
                <children>

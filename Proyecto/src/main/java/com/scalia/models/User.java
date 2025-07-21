@@ -14,6 +14,7 @@ public class User {
     private String lastName;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+    private boolean guest = false;
     
     // Constructors
     public User() {}
@@ -89,6 +90,13 @@ public class User {
     
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+    
+    public boolean isGuest() {
+        return guest;
+    }
+    public void setGuest(boolean guest) {
+        this.guest = guest;
     }
     
     @Override
