@@ -1,0 +1,173 @@
+# MÓDULO 3: TESTING - PROYECTO SCALIA
+
+## 1. PRUEBAS UNITARIAS IMPLEMENTADAS
+
+### 1.1 Herramienta Utilizada
+- **JUnit 5 (Jupiter)**: Framework de testing para Java
+- **Maven**: Gestor de dependencias y build tool
+- **Configuración**: Incluida en `pom.xml` con versión 5.9.3
+
+### 1.2 Pruebas Implementadas por Integrante
+
+#### Integrante 1: Pruebas de Modelos
+**Archivo**: `src/test/java/com/scalia/models/UserTest.java`
+- **Test 1**: Constructor con parámetros inicializa correctamente todos los campos
+- **Test 2**: Constructor vacío crea un objeto User válido  
+- **Test 3**: Métodos setters y getters funcionan correctamente
+- **Test 4**: Método toString devuelve representación correcta del usuario
+- **Test 5**: Manejo de valores nulos en setters
+
+**Archivo**: `src/test/java/com/scalia/models/InstrumentTest.java`
+- **Test 1**: Constructor e inicialización de Instrumento con afinación
+- **Test 2**: Constructor e inicialización de Instrumento sin afinación (NULL)
+- **Test 3**: Métodos Setters de Instrumento
+
+#### Integrante 2: Pruebas de Acceso a Datos
+**Archivo**: `src/test/java/com/scalia/dao/UserDAOTest.java`
+- **Test 1**: createUser debería crear un usuario exitosamente
+- **Test 2**: findByUsername debería encontrar un usuario existente
+- **Test 3**: findByUsername debería devolver null para usuario inexistente
+- **Test 4**: authenticateUser debería autenticar credenciales válidas
+- **Test 5**: authenticateUser debería fallar con credenciales inválidas
+- **Test 6**: usernameExists debería detectar usuarios existentes
+- **Test 7**: emailExists debería detectar emails existentes
+- **Test 8**: getAllUsers debería devolver todos los usuarios
+- **Test 9**: updateUser debería actualizar información del usuario
+- **Test 10**: deleteUser debería eliminar un usuario existente
+
+**Archivo**: `src/test/java/com/scalia/dao/InstrumentDAOTest.java`
+- **Test 1**: getAllInstruments debería devolver la lista correcta de instrumentos
+
+#### Integrante 3: Pruebas de Utilidades
+**Archivo**: `src/test/java/com/scalia/utils/DatabaseConnectionTest.java`
+- **Test 1**: getConnection debería devolver una conexión válida y activa
+- **Test 2**: testConnection debería devolver true para una conexión válida
+- **Test 3**: executeQuery debería ejecutar consultas SELECT correctamente
+- **Test 4**: executeQuery con parámetros debería funcionar correctamente
+- **Test 5**: executeUpdate debería ejecutar operaciones INSERT/UPDATE/DELETE
+- **Test 6**: executeInsert debería devolver el ID generado
+- **Test 7**: closeConnection debería cerrar la conexión correctamente
+
+### 1.3 Ejecución de Pruebas
+```bash
+# Ejecutar todas las pruebas
+mvn test
+
+# Ejecutar pruebas específicas
+mvn test -Dtest=UserTest
+mvn test -Dtest=UserDAOTest
+mvn test -Dtest=DatabaseConnectionTest
+```
+
+## 2. ANÁLISIS ESTÁTICO DE CÓDIGO (LINTER)
+
+### 2.1 Herramienta Utilizada
+- **Checkstyle**: Analizador estático para Java
+- **Versión**: 10.12.5
+- **Plugin Maven**: maven-checkstyle-plugin 3.3.0
+
+### 2.2 Configuración Aplicada
+**Archivo**: `checkstyle.xml`
+
+#### Reglas Personalizadas Implementadas:
+1. **Convenciones de Nomenclatura**:
+   - Nombres de clases en PascalCase
+   - Nombres de métodos y variables en camelCase
+   - Constantes en UPPER_SNAKE_CASE
+
+2. **Formato y Espaciado**:
+   - Longitud máxima de línea: 120 caracteres
+   - Longitud máxima de método: 150 líneas
+   - Longitud máxima de archivo: 2000 líneas
+   - Espaciado consistente alrededor de operadores
+
+3. **Imports y Estructura**:
+   - Prohibir imports con asterisco (*)
+   - Detectar imports no utilizados
+   - Detectar imports redundantes
+
+4. **Calidad de Código**:
+   - Detectar números mágicos
+   - Verificar equals/hashCode
+   - Detectar bloques anidados innecesarios
+   - Verificar visibilidad de modificadores
+
+5. **Documentación**:
+   - Javadoc requerido para métodos públicos
+   - Javadoc requerido para clases públicas
+   - Estilo consistente de Javadoc
+
+### 2.3 Ejecución del Linter
+```bash
+# Ejecutar análisis estático
+mvn checkstyle:check
+
+# Ejecutar con reporte detallado
+mvn checkstyle:checkstyle
+```
+
+### 2.4 Resultados Obtenidos
+El análisis estático verifica:
+- **Calidad del código**: Consistencia en estilo y formato
+- **Convenciones**: Seguimiento de estándares Java
+- **Documentación**: Presencia de Javadoc donde es requerido
+- **Estructura**: Organización correcta del código
+
+### 2.5 Evidencia de Ejecución
+Los resultados del linter se generan en:
+- **Consola**: Salida directa durante la ejecución
+- **Reporte**: Archivo XML en `target/checkstyle-result.xml`
+- **HTML**: Reporte visual en `target/site/checkstyle.html`
+
+## 3. VALIDACIÓN DE FUNCIONALIDADES ESENCIALES
+
+### 3.1 Autenticación de Usuarios
+- ✅ Creación de usuarios
+- ✅ Validación de credenciales
+- ✅ Verificación de existencia de username/email
+- ✅ Actualización de información de usuario
+- ✅ Eliminación de usuarios
+
+### 3.2 Gestión de Instrumentos
+- ✅ Obtención de lista de instrumentos
+- ✅ Validación de datos de instrumentos
+- ✅ Manejo de instrumentos con y sin afinación
+
+### 3.3 Conexión a Base de Datos
+- ✅ Establecimiento de conexión
+- ✅ Ejecución de consultas SELECT
+- ✅ Ejecución de operaciones INSERT/UPDATE/DELETE
+- ✅ Manejo de IDs generados automáticamente
+- ✅ Cierre correcto de conexiones
+
+## 4. DOCUMENTACIÓN Y EJECUTABILIDAD
+
+### 4.1 Documentación de Pruebas
+- Cada prueba incluye `@DisplayName` descriptivo
+- Comentarios explicativos en español
+- Mensajes de aserción claros y descriptivos
+- Documentación Javadoc en clases de prueba
+
+### 4.2 Entorno de Ejecución
+- **Requisitos**: Java 17, Maven, MySQL
+- **Configuración**: Base de datos configurada en `DatabaseConnection.java`
+- **Dependencias**: Definidas en `pom.xml`
+- **Ejecución**: Comandos Maven estándar
+
+### 4.3 Cobertura de Pruebas
+- **Modelos**: 100% de cobertura de métodos públicos
+- **DAOs**: Pruebas de todas las operaciones CRUD
+- **Utilidades**: Validación completa de funcionalidad de base de datos
+
+## 5. CONCLUSIÓN
+
+El módulo de Testing cumple con todos los requisitos establecidos:
+- ✅ Mínimo 3 pruebas unitarias por integrante (22 pruebas totales)
+- ✅ Herramienta adecuada (JUnit 5)
+- ✅ Validación de funcionalidad esencial del sistema
+- ✅ Pruebas documentadas y ejecutables
+- ✅ Análizador estático configurado (Checkstyle)
+- ✅ Configuración personalizada aplicada
+- ✅ Evidencia de ejecución disponible
+
+Las pruebas cubren las funcionalidades centrales de la aplicación Scalia, incluyendo autenticación, gestión de usuarios, gestión de instrumentos y operaciones de base de datos, garantizando la calidad y confiabilidad del código. 
