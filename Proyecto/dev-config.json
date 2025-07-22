@@ -1,0 +1,84 @@
+{
+  "project": {
+    "name": "Scalia",
+    "version": "1.0-SNAPSHOT",
+    "description": "Music Theory Desktop Application",
+    "mainClass": "com.scalia.Main"
+  },
+  "database": {
+    "host": "localhost",
+    "port": 3306,
+    "name": "scalia_db",
+    "username": "root",
+    "defaultPassword": "1234",
+    "schemaFile": "src/main/resources/database/scalia_schema.sql"
+  },
+  "java": {
+    "minVersion": "17",
+    "targetVersion": "17",
+    "encoding": "UTF-8"
+  },
+  "maven": {
+    "minVersion": "3.6",
+    "javaFXVersion": "17.0.2",
+    "mysqlConnectorVersion": "8.0.33",
+    "junitVersion": "5.9.3"
+  },
+  "dependencies": {
+    "required": [
+      "Java 17+",
+      "Maven 3.6+",
+      "MySQL 8.0+"
+    ],
+    "downloadUrls": {
+      "java": "https://adoptium.net/",
+      "maven": "https://maven.apache.org/download.cgi",
+      "mysql": "https://dev.mysql.com/downloads/mysql/"
+    }
+  },
+  "scripts": {
+    "windows": {
+      "setup": "dev-setup.ps1",
+      "healthCheck": "health-check.ps1"
+    },
+    "unix": {
+      "setup": "dev-setup.sh",
+      "healthCheck": "health-check.sh"
+    }
+  },
+  "features": {
+    "databaseSetup": true,
+    "sampleData": true,
+    "verboseOutput": false,
+    "autoStart": true
+  },
+  "tables": {
+    "required": [
+      "users",
+      "instruments", 
+      "tunings",
+      "chords",
+      "theory_concepts",
+      "user_progress"
+    ]
+  },
+  "sampleData": {
+    "instruments": 4,
+    "chords": 7,
+    "theoryConcepts": 6,
+    "tunings": 4
+  },
+  "ui": {
+    "title": "Scalia - Teoría Musical",
+    "minWidth": 800,
+    "minHeight": 600,
+    "defaultWidth": 800,
+    "defaultHeight": 600
+  },
+  "development": {
+    "debugMode": true,
+    "logLevel": "INFO",
+    "autoReload": false,
+    "hotReload": false
+  }
+} 

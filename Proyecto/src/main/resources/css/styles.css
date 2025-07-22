@@ -1,0 +1,360 @@
+@font-face {
+    font-family: 'Florencesans';
+    src: url('/fonts/Florsn01.ttf');
+}
+@font-face {
+    font-family: 'Florencesans Black';
+    src: url('/fonts/Florsn02.ttf');
+}
+@font-face {
+    font-family: 'Florencesans Comp';
+    src: url('/fonts/Florsn03.ttf');
+}
+@font-face {
+    font-family: 'Florencesans Cond';
+    src: url('/fonts/Florsn04.ttf');
+}
+@font-face {
+    font-family: 'Florencesans Exp';
+    src: url('/fonts/Florsn05.ttf');
+}
+@font-face {
+    font-family: 'Florencesans Outline';
+    src: url('/fonts/Florsn06.ttf');
+}
+@font-face {
+    font-family: 'Florencesans Rev';
+    src: url('/fonts/Florsn07.ttf');
+}
+@font-face {
+    font-family: 'Florencesans Shaded';
+    src: url('/fonts/Florsn08.ttf');
+}
+
+/* Scalia - Music Theory Application Styles */
+
+.root {
+    -fx-font-family: 'Florencesans', 'Segoe UI', Arial, sans-serif;
+    -fx-background-color: #222;
+    -fx-text-fill: #eaeaea;
+}
+
+/* Button Styles */
+.button, .login-main-button {
+    -fx-background-color: linear-gradient(to bottom right, #39ff14 0%, #00c800 80%, #1aff1a 100%) !important;
+    -fx-text-fill: #fff;
+    -fx-font-size: 22px;
+    -fx-font-family: 'Florsn01', 'Florencesans Black', 'Florencesans', Arial, sans-serif;
+    -fx-font-weight: bold;
+    -fx-border-radius: 16px;
+    -fx-background-radius: 16px;
+    -fx-padding: 10px 32px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #39ff14, 8, 0.2, 0, 2);
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+    -fx-border-width: 0;
+    -fx-border-color: transparent;
+    border-color: transparent;
+}
+
+#loginButton, .login-main-button, .button.login-main-button, #guestButton, .button#guestButton {
+    -fx-background-color: transparent !important;
+    -fx-background-image: url('/assets/buttons/iniciosesion.png');
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-text-fill: transparent;
+    -fx-font-size: 0px;
+    -fx-border-radius: 32px;
+    -fx-background-radius: 32px;
+    -fx-min-width: 340px;
+    -fx-min-height: 80px;
+    -fx-pref-width: 340px;
+    -fx-pref-height: 80px;
+    -fx-max-width: 340px;
+    -fx-max-height: 80px;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+    -fx-effect: none;
+    -fx-transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: none;
+}
+#loginButton:hover, .login-main-button:hover, .button.login-main-button:hover,
+#guestButton:hover, .button#guestButton:hover {
+    -fx-scale-x: 1.04;
+    -fx-scale-y: 1.04;
+    -fx-opacity: 0.85;
+    -fx-transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Text Field Styles */
+.text-field {
+    -fx-background-color: #222;
+    -fx-border-color: #39ff14;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-text-fill: #eaffea;
+    -fx-font-size: 18px;
+    -fx-padding: 8px 12px;
+}
+
+.text-field:focused {
+    -fx-border-color: #4CAF50;
+    -fx-border-width: 2px;
+}
+
+/* Password Field Styles */
+.password-field {
+    -fx-background-color: #222;
+    -fx-border-color: #39ff14;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-text-fill: #eaffea;
+    -fx-font-size: 18px;
+    -fx-padding: 8px 12px;
+}
+
+.password-field:focused {
+    -fx-border-color: #4CAF50;
+    -fx-border-width: 2px;
+}
+
+/* Label Styles */
+.label {
+    -fx-font-family: 'Florencesans', Arial, sans-serif;
+    -fx-font-size: 18px;
+    -fx-text-fill: #eaeaea;
+}
+
+.label.title {
+    -fx-font-size: 48px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #eaffea;
+    -fx-effect: none;
+}
+
+.label.subtitle {
+    -fx-font-size: 22px;
+    -fx-font-weight: normal;
+    -fx-text-fill: #eaffea;
+    -fx-effect: none;
+}
+
+.label.error-label {
+    -fx-text-fill: #e74c3c;
+    -fx-font-weight: bold;
+}
+
+/* VBox and HBox Styles */
+.vbox {
+    -fx-spacing: 10px;
+    -fx-padding: 20px;
+}
+
+.hbox {
+    -fx-spacing: 10px;
+    -fx-padding: 10px;
+}
+
+/* GridPane Styles */
+.grid-pane {
+    -fx-hgap: 10px;
+    -fx-vgap: 10px;
+    -fx-padding: 20px;
+}
+
+/* ScrollPane Styles */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 3px;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: white;
+}
+
+/* TableView Styles */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #ddd;
+}
+
+.table-view .column-header {
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #ddd;
+}
+
+/* Menu Styles */
+.menu-bar {
+    -fx-background-color: #2c3e50;
+}
+
+.menu-bar .label {
+    -fx-text-fill: white;
+}
+
+.menu-item {
+    -fx-background-color: white;
+}
+
+.menu-item:hover {
+    -fx-background-color: #f0f0f0;
+}
+
+/* Custom Music-themed Colors */
+.music-primary {
+    -fx-background-color: #9b59b6;
+}
+
+.music-secondary {
+    -fx-background-color: #3498db;
+}
+
+.music-accent {
+    -fx-background-color: #e74c3c;
+}
+
+/* Error and Success Messages */
+.error-label {
+    -fx-text-fill: #e74c3c;
+    -fx-font-weight: bold;
+}
+
+.success-label {
+    -fx-text-fill: #27ae60;
+    -fx-font-weight: bold;
+}
+
+/* Botones de categoría de instrumentos */
+.category-toggle-button {
+    -fx-background-color: linear-gradient(to bottom right, #39ff14, #00c800 80%, #b6ffb6 100%);
+    -fx-text-fill: #eaffea;
+    -fx-font-weight: bold;
+    -fx-font-size: 32px;
+    -fx-padding: 16 36;
+    -fx-background-radius: 24;
+    -fx-border-radius: 24;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #1aff1a, 12, 0.2, 0, 4);
+    -fx-letter-spacing: 2px;
+    -fx-alignment: center;
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+    -fx-transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
+}
+
+.category-toggle-button:hover, .category-toggle-button:selected, .category-toggle-button:focused {
+    -fx-background-color: linear-gradient(to bottom right, #00e600, #00b300 80%, #39ff14 100%);
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(gaussian, #00ff00, 18, 0.3, 0, 6);
+    -fx-scale-x: 1.08;
+    -fx-scale-y: 1.08;
+}
+
+/* Login Container Styles */
+.login-container {
+    -fx-background-color: #232323;
+    -fx-border-radius: 18px;
+    -fx-background-radius: 18px;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 4px;
+    -fx-padding: 32px 32px 32px 32px;
+    -fx-effect: dropshadow(gaussian, #00000088, 16, 0.2, 0, 4);
+    -fx-max-width: 520px;
+    -fx-max-height: 420px;
+    -fx-alignment: center;
+}
+
+/* Línea divisoria bajo el logo */
+.separator {
+    -fx-background-color: #cccccc;
+    -fx-padding: 8 0 0 0;
+    -fx-border-width: 0 0 2px 0;
+    -fx-border-color: #cccccc;
+}
+
+/* Campos de texto login */
+.text-field, .password-field {
+    -fx-background-color: #eaeaea;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-text-fill: #232323;
+    -fx-font-size: 18px;
+    -fx-padding: 8px 12px;
+    -fx-font-family: 'Florencesans', Arial, sans-serif;
+    -fx-font-weight: bold;
+}
+
+/* Botón invitado (negro, grande, fuente personalizada) */
+#guestButton, .button#guestButton {
+    -fx-background-color: transparent !important;
+    -fx-background-image: url('/assets/buttons/invitadobot.png');
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-text-fill: transparent;
+    -fx-font-size: 0px;
+    -fx-border-radius: 32px;
+    -fx-background-radius: 32px;
+    -fx-min-width: 240px;
+    -fx-min-height: 80px;
+    -fx-pref-width: 240px;
+    -fx-pref-height: 80px;
+    -fx-max-width: 240px;
+    -fx-max-height: 80px;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+    -fx-effect: none;
+    -fx-transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+}
+#guestButton:hover, .button#guestButton:hover {
+    -fx-scale-x: 1.04;
+    -fx-scale-y: 1.04;
+    -fx-opacity: 0.85;
+}
+
+/* Botón principal login (verde con degradado, grande, fuente personalizada) */
+#loginButton, .login-main-button, .button.login-main-button {
+    -fx-background-color: transparent !important;
+    -fx-background-image: url('/assets/buttons/iniciosesion.png');
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    -fx-text-fill: transparent;
+    -fx-font-size: 0px;
+    -fx-border-radius: 32px;
+    -fx-background-radius: 32px;
+    -fx-min-width: 340px;
+    -fx-min-height: 80px;
+    -fx-pref-width: 340px;
+    -fx-pref-height: 80px;
+    -fx-max-width: 340px;
+    -fx-max-height: 80px;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+    -fx-effect: none;
+    -fx-transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: none;
+}
+#loginButton:hover, .login-main-button:hover, .button.login-main-button:hover {
+    -fx-scale-x: 1.04;
+    -fx-scale-y: 1.04;
+    -fx-opacity: 0.85;
+}
+
+/* Enlace de registro */
+.hyperlink, .register-link {
+    -fx-text-fill: #39ff14;
+    -fx-font-size: 16px;
+    -fx-underline: true;
+    -fx-font-family: 'Florencesans', Arial, sans-serif;
+}
+
+/* Logo sin luminación extra */
+#logoImageView {
+    -fx-effect: none;
+}

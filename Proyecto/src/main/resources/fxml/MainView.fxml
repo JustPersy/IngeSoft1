@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.scalia.controllers.MainController">
+
+   <children>
+      <VBox alignment="CENTER" spacing="20" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+            AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+
+         <padding>
+            <Insets top="40" bottom="40" left="40" right="40"/>
+         </padding>
+
+         <Text styleClass="title" text="Scalia - Teoría Musical">
+            <font>
+               <Font size="28"/>
+            </font>
+         </Text>
+
+         <Text styleClass="subtitle" text="Selecciona un módulo para comenzar">
+            <font>
+               <Font size="18"/>
+            </font>
+         </Text>
+
+         <GridPane alignment="CENTER" hgap="20" vgap="20" maxWidth="800">
+            <columnConstraints>
+               <ColumnConstraints percentWidth="50" hgrow="ALWAYS"/>
+               <ColumnConstraints percentWidth="50" hgrow="ALWAYS"/>
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints percentHeight="33.33" vgrow="ALWAYS"/>
+               <RowConstraints percentHeight="33.33" vgrow="ALWAYS"/>
+               <RowConstraints percentHeight="33.33" vgrow="ALWAYS"/>
+            </rowConstraints>
+
+            <children>
+               <Button fx:id="theoryButton" text="🎼 Teoría Musical" onAction="#openTheory"
+                       GridPane.rowIndex="0" GridPane.columnIndex="0" maxWidth="Infinity" maxHeight="Infinity"/>
+               <Button fx:id="instrumentsButton" text="🎹 Instrumentos" onAction="#openInstruments"
+                       GridPane.rowIndex="0" GridPane.columnIndex="1" maxWidth="Infinity" maxHeight="Infinity"/>
+               <Button fx:id="chordsButton" text="🔊 Acordes" onAction="#openChords"
+                       GridPane.rowIndex="1" GridPane.columnIndex="0" maxWidth="Infinity" maxHeight="Infinity"/>
+               <Button fx:id="tunerButton" text="🎧 Afinador" onAction="#openTuner"
+                       GridPane.rowIndex="1" GridPane.columnIndex="1" maxWidth="Infinity" maxHeight="Infinity"/>
+               <Button fx:id="tuningsButton" text="🎵 Afinaciones" onAction="#openTunings"
+                       GridPane.rowIndex="2" GridPane.columnIndex="0" maxWidth="Infinity" maxHeight="Infinity"/>
+               <Button fx:id="usersButton" text="👤 Usuarios" onAction="#openUsers"
+                       GridPane.rowIndex="2" GridPane.columnIndex="1" maxWidth="Infinity" maxHeight="Infinity"/>
+            </children>
+         </GridPane>
+
+         <Region VBox.vgrow="ALWAYS"/>
+
+         <HBox alignment="CENTER">
+            <children>
+               <Button fx:id="logoutButton" text="🔙 Cerrar Sesión" onAction="#handleLogout" />
+            </children>
+         </HBox>
+
+      </VBox>
+   </children>
+</AnchorPane>
