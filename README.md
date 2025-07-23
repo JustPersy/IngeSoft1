@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="./assets/LogoScalia.png" alt="Logo de Scalia" width="180"/>
+  <img src="./assets/scalialogo.png" alt="Logo de Scalia" width="180"/>
 </p>
 
 # 🎵 Scalia - Aplicación de escritorio para teoría musical e instrumentos
