@@ -39,7 +39,7 @@
     -fx-text-fill: #eaeaea;
 }
 
-/* Button Styles */
+/* Button Styles (General) */
 .button, .login-main-button {
     -fx-background-color: linear-gradient(to bottom right, #39ff14 0%, #00c800 80%, #1aff1a 100%) !important;
     -fx-text-fill: #fff;
@@ -55,17 +55,18 @@
     -fx-scale-y: 1;
     -fx-border-width: 0;
     -fx-border-color: transparent;
-    border-color: transparent;
+    /* border-color: transparent; <-- Esto es CSS web, no JavaFX */
 }
 
+/* Specific Login/Guest Button Styles (using image backgrounds) */
 #loginButton, .login-main-button, .button.login-main-button, #guestButton, .button#guestButton {
     -fx-background-color: transparent !important;
-    -fx-background-image: url('/assets/buttons/iniciosesion.png');
+    -fx-background-image: url('/assets/buttons/iniciosesion.png'); /* Asegúrate que la ruta sea correcta */
     -fx-background-size: contain;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
-    -fx-text-fill: transparent;
-    -fx-font-size: 0px;
+    -fx-text-fill: transparent; /* Texto transparente porque es una imagen */
+    -fx-font-size: 0px; /* Tamaño de fuente 0 para que no se vea el texto */
     -fx-border-radius: 32px;
     -fx-background-radius: 32px;
     -fx-min-width: 340px;
@@ -77,15 +78,15 @@
     -fx-padding: 0;
     -fx-border-color: transparent;
     -fx-effect: none;
-    -fx-transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-    box-shadow: none;
+    /* -fx-transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1); <-- Transición para hover */
+    /* box-shadow: none; <-- Esto es CSS web, no JavaFX */
 }
 #loginButton:hover, .login-main-button:hover, .button.login-main-button:hover,
 #guestButton:hover, .button#guestButton:hover {
     -fx-scale-x: 1.04;
     -fx-scale-y: 1.04;
     -fx-opacity: 0.85;
-    -fx-transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    /* -fx-transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1); <-- Transición para hover */
 }
 
 /* Text Field Styles */
@@ -127,12 +128,21 @@
     -fx-text-fill: #eaeaea;
 }
 
-.label.title {
+.label.title { /* Esto aplica a .label.title */
     -fx-font-size: 48px;
     -fx-font-weight: bold;
     -fx-text-fill: #eaffea;
     -fx-effect: none;
 }
+
+/* Título principal de la librería de instrumentos */
+.title-label { /* Esto aplica a Label con styleClass="title-label" */
+    -fx-font-size: 48px; /* Aumentado a 48px para que sea más grande */
+    -fx-font-weight: bold;
+    -fx-text-fill: #eaffea; /* Usando el color de texto de tu .label.title */
+    -fx-effect: none;
+}
+
 
 .label.subtitle {
     -fx-font-size: 22px;
@@ -217,41 +227,40 @@
 }
 
 /* Error and Success Messages */
-.error-label {
-    -fx-text-fill: #e74c3c;
-    -fx-font-weight: bold;
-}
-
+/* .error-label ya está definido arriba */
 .success-label {
     -fx-text-fill: #27ae60;
     -fx-font-weight: bold;
 }
 
-/* Botones de categoría de instrumentos */
+/* Botones de categoría de instrumentos (CORREGIDO AQUÍ) */
 .category-toggle-button {
-    -fx-background-color: linear-gradient(to bottom right, #39ff14, #00c800 80%, #b6ffb6 100%);
-    -fx-text-fill: #eaffea;
-    -fx-font-weight: bold;
-    -fx-font-size: 32px;
-    -fx-padding: 16 36;
-    -fx-background-radius: 24;
-    -fx-border-radius: 24;
-    -fx-border-color: transparent;
-    -fx-cursor: hand;
-    -fx-effect: dropshadow(gaussian, #1aff1a, 12, 0.2, 0, 4);
-    -fx-letter-spacing: 2px;
-    -fx-alignment: center;
-    -fx-scale-x: 1;
-    -fx-scale-y: 1;
-    -fx-transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
+   -fx-background-color: linear-gradient(to bottom right, #39ff14, #00c800 80%, #b6ffb6 100%);
+       -fx-text-fill: #eaffea;
+       -fx-font-weight: bold;
+       -fx-font-size: 18px;         /* Ajustado a 18px para ser un poco más grande */
+       -fx-padding: 10 20;          /* Padding ajustado para más espacio interno */
+       -fx-background-radius: 16;   /* Radio para esquinas redondeadas */
+       -fx-border-radius: 16;
+       -fx-border-color: transparent;
+       -fx-cursor: hand;
+       -fx-effect: dropshadow(gaussian, #1aff1a, 8, 0.2, 0, 2);
+       -fx-letter-spacing: 0px;     /* Sin espacio extra entre letras */
+       -fx-alignment: center;
+       -fx-scale-x: 1;
+       -fx-scale-y: 1;
+       -fx-transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
+       -fx-min-width: 0;            /* Permite que el botón se reduzca si es necesario */
+       -fx-pref-width: USE_COMPUTED_SIZE; /* Calcula el ancho preferido basado en el contenido */
+       /* NO NECESITAS max-width aquí, ya que el HBox.setHgrow() lo hará crecer */
 }
 
 .category-toggle-button:hover, .category-toggle-button:selected, .category-toggle-button:focused {
-    -fx-background-color: linear-gradient(to bottom right, #00e600, #00b300 80%, #39ff14 100%);
-    -fx-text-fill: #ffffff;
-    -fx-effect: dropshadow(gaussian, #00ff00, 18, 0.3, 0, 6);
-    -fx-scale-x: 1.08;
-    -fx-scale-y: 1.08;
+       -fx-background-color: linear-gradient(to bottom right, #00e600, #00b300 80%, #39ff14 100%);
+       -fx-text-fill: #ffffff;
+       -fx-effect: dropshadow(gaussian, #00ff00, 12, 0.3, 0, 4);
+       -fx-scale-x: 1.05;
+       -fx-scale-y: 1.05;
 }
 
 /* Login Container Styles */
@@ -277,6 +286,10 @@
 }
 
 /* Campos de texto login */
+/* .text-field, .password-field ya están definidos arriba, pero se duplican aquí con más especificidad */
+/* Esto puede causar conflictos si se aplican a elementos no deseados.
+   Si estos son solo para login, considera usar un styleClass específico para ellos,
+   ej. .login-text-field */
 .text-field, .password-field {
     -fx-background-color: #eaeaea;
     -fx-border-color: #cccccc;
@@ -292,7 +305,7 @@
 /* Botón invitado (negro, grande, fuente personalizada) */
 #guestButton, .button#guestButton {
     -fx-background-color: transparent !important;
-    -fx-background-image: url('/assets/buttons/invitadobot.png');
+    -fx-background-image: url('/assets/buttons/invitadobot.png'); /* Asegúrate que la ruta sea correcta */
     -fx-background-size: contain;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
@@ -318,9 +331,12 @@
 }
 
 /* Botón principal login (verde con degradado, grande, fuente personalizada) */
+/* #loginButton, .login-main-button, .button.login-main-button ya está definido arriba */
+/* Se repite aquí con más especificidad, lo cual puede ser confuso.
+   Mantén la primera definición si es la deseada para todos los botones de login */
 #loginButton, .login-main-button, .button.login-main-button {
     -fx-background-color: transparent !important;
-    -fx-background-image: url('/assets/buttons/iniciosesion.png');
+    -fx-background-image: url('/assets/buttons/iniciosesion.png'); /* Asegúrate que la ruta sea correcta */
     -fx-background-size: contain;
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
@@ -338,7 +354,7 @@
     -fx-border-color: transparent;
     -fx-effect: none;
     -fx-transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-    box-shadow: none;
+    /* box-shadow: none; <-- CSS web */
 }
 #loginButton:hover, .login-main-button:hover, .button.login-main-button:hover {
     -fx-scale-x: 1.04;
@@ -357,4 +373,43 @@
 /* Logo sin luminación extra */
 #logoImageView {
     -fx-effect: none;
+}
+
+/* Nuevo estilo para el label de la categoría actual */
+.current-category-label {
+    -fx-font-size: 20px; /* Un poco más grande que el texto normal */
+    -fx-font-weight: bold;
+    -fx-text-fill: #39ff14; /* Color verde de tu tema */
+    -fx-alignment: center;
+    -fx-max-width: Infinity;
+}
+
+/* Estilos para el panel de detalles */
+.detail-panel {
+    -fx-background-color: #333; /* Fondo oscuro para el panel */
+    -fx-border-color: #39ff14; /* Borde verde */
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 15px;
+    -fx-effect: dropshadow(gaussian, #000000, 8, 0.2, 0, 2);
+}
+
+.detail-title-label {
+    -fx-font-size: 24px; /* Título de los detalles más grande */
+    -fx-font-weight: bold;
+    -fx-text-fill: #eaffea;
+    -fx-padding: 0 0 10px 0; /* Espacio debajo del título */
+}
+
+.detail-label-bold { /* Para los títulos de las propiedades (Name:, Type:, etc.) */
+    -fx-font-weight: bold;
+    -fx-text-fill: #b6ffb6; /* Un verde más claro para los títulos de las propiedades */
+    -fx-font-size: 16px;
+}
+
+/* Estilo para los valores de los detalles (los Labels sin styleClass específico) */
+.detail-panel .label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #eaeaea; /* Color de texto general */
 }

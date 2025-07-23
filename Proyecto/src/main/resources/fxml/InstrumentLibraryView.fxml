@@ -9,12 +9,12 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Priority?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.control.ComboBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.scalia.controllers.InstrumentLibraryController">
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.scalia.controllers.InstrumentLibraryController"
+            styleClass="root" stylesheets="@../css/styles.css"> <!-- Asegúrate de que el root y stylesheets estén aquí -->
     <children>
         <VBox alignment="TOP_CENTER" spacing="10" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
             <padding>
@@ -29,10 +29,23 @@
                 </VBox.margin>
             </Label>
 
-            <HBox spacing="10" alignment="CENTER_LEFT" fx:id="categoryButtonBar" />
+            <!-- Sección de botones de categoría -->
+            <HBox spacing="5.0" alignment="CENTER_LEFT" fx:id="categoryButtonBar">
+                <VBox.margin>
+                    <Insets bottom="10" />
+                </VBox.margin>
+            </HBox>
+
+            <!-- Label para mostrar la categoría actual seleccionada -->
+            <Label fx:id="currentCategoryLabel" text="Categoría Actual: Todas" styleClass="current-category-label">
+                <VBox.margin>
+                    <Insets bottom="20" />
+                </VBox.margin>
+            </Label>
 
             <HBox spacing="20.0" VBox.vgrow="ALWAYS">
 
+                <!-- Panel de la cuadrícula de instrumentos -->
                 <VBox spacing="10" HBox.hgrow="ALWAYS">
                     <GridPane fx:id="instrumentGridPane"
                               hgap="30" vgap="30" alignment="TOP_CENTER"
@@ -52,12 +65,14 @@
                     </GridPane>
                 </VBox>
 
-                <VBox fx:id="detailPanel" spacing="10.0" alignment="TOP_LEFT" prefWidth="300" styleClass="detail-panel">
+                <!-- Panel de detalles del instrumento -->
+                <VBox fx:id="detailPanel" spacing="10.0" alignment="TOP_LEFT" prefWidth="350" styleClass="detail-panel">
                     <Label text="Instrument Details" styleClass="detail-title-label"/>
-                    <Label fx:id="detailNameLabel"/>
-                    <Label fx:id="detailTypeLabel"/>
-                    <Label fx:id="detailDescriptionLabel"/>
-                    <Label fx:id="detailTuningStandardLabel"/>
+                    <Label fx:id="detailNameLabel" wrapText="true" maxWidth="Infinity"/>
+                    <Label fx:id="detailTypeLabel" wrapText="true" maxWidth="Infinity"/>
+                    <Label fx:id="detailCategoryLabel" wrapText="true" maxWidth="Infinity"/> <!-- ¡NUEVO LABEL PARA CATEGORÍA! -->
+                    <Label fx:id="detailDescriptionLabel" wrapText="true" maxWidth="Infinity"/>
+                    <Label fx:id="detailTuningStandardLabel" wrapText="true" maxWidth="Infinity"/>
                     <VBox.margin>
                         <Insets top="0.0" />
                     </VBox.margin>
