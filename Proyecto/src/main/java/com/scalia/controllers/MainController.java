@@ -19,7 +19,7 @@ public class MainController {
 
     @FXML
     private void openTheory() {
-        showModuleMessage("Teoría Musical", "Módulo de teoría musical en desarrollo");
+        navigateTo("/fxml/TheoryView.fxml", "Scalia - Teoría Musical");
     }
 
     @FXML
@@ -44,22 +44,22 @@ public class MainController {
 
     @FXML
     private void openChords() {
-        showModuleMessage("Acordes", "Visualizador de acordes en desarrollo");
+        navigateTo("/fxml/ChordVisualizerView.fxml", "Scalia - Visualizador de Acordes");
     }
 
     @FXML
     private void openTuner() {
-        showModuleMessage("Afinador", "Afinador de instrumentos en desarrollo");
+        navigateTo("/fxml/TunerView.fxml", "Scalia - Afinador");
     }
 
     @FXML
     private void openTunings() {
-        showModuleMessage("Afinaciones", "Biblioteca de afinaciones en desarrollo");
+        navigateTo("/fxml/TuningLibraryView.fxml", "Scalia - Afinaciones");
     }
 
     @FXML
     private void openUsers() {
-        showModuleMessage("Usuarios", "Gestión de usuarios en desarrollo");
+        navigateTo("/fxml/UserManagementView.fxml", "Scalia - Gestión de Usuarios");
     }
 
     @FXML
@@ -87,6 +87,26 @@ public class MainController {
         alert.setHeaderText("Módulo en Desarrollo");
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    /**
+     * Navigate to a specific FXML view within the primary stage.
+     */
+    private void navigateTo(String resource, String title) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(resource));
+            Parent root = loader.load();
+            Stage stage = Main.getPrimaryStage();
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("/css/styles.css").toExternalForm());
+
+            stage.setScene(scene);
+            stage.setTitle(title);
+            stage.setMaximized(true);
+            stage.show();
+        } catch (IOException e) {
+            showModuleMessage(title, "No se pudo cargar la vista.");
+        }
     }
 
     /**

@@ -74,6 +74,7 @@ Actualmente se están ejecutando las siguientes tareas:
 - Configuración del entorno JavaFX.
 - Conexión con base de datos local vía JDBC.
 - Implementación de ventanas base: login, navegación principal, visualizador de instrumentos.
+- Creación de vistas iniciales para acordes, afinador, teoría, afinaciones y gestión de usuarios.
 
 ---
 
