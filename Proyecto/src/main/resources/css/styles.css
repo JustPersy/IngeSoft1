@@ -413,3 +413,462 @@
     -fx-font-size: 16px;
     -fx-text-fill: #eaeaea; /* Color de texto general */
 }
+
+/* Navigation and Header Styles */
+.header-section {
+    -fx-background-color: #333;
+    -fx-padding: 20px;
+    -fx-border-width: 0 0 2px 0;
+    -fx-border-color: #39ff14;
+}
+
+.page-title {
+    -fx-fill: #39ff14;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.back-button {
+    -fx-background-color: #555;
+    -fx-text-fill: #eaeaea;
+    -fx-font-size: 14px;
+    -fx-padding: 8 16 8 16;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+}
+
+.back-button:hover {
+    -fx-background-color: #666;
+}
+
+/* Theory Module Styles */
+.section-title {
+    -fx-text-fill: #39ff14;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.content-title {
+    -fx-text-fill: #eaeaea;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.category-list, .content-list {
+    -fx-background-color: #2a2a2a;
+    -fx-control-inner-background: #2a2a2a;
+    -fx-text-fill: #eaeaea;
+}
+
+.category-list .list-cell, .content-list .list-cell {
+    -fx-background-color: #2a2a2a;
+    -fx-text-fill: #eaeaea;
+    -fx-padding: 8px;
+}
+
+.category-list .list-cell:filled:selected, .content-list .list-cell:filled:selected {
+    -fx-background-color: #39ff14;
+    -fx-text-fill: #222;
+}
+
+.content-text {
+    -fx-background-color: #2a2a2a;
+    -fx-control-inner-background: #2a2a2a;
+    -fx-text-fill: #eaeaea;
+    -fx-font-size: 14px;
+}
+
+/* Chord Visualizer Styles */
+.chord-title {
+    -fx-text-fill: #39ff14;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.chord-list {
+    -fx-background-color: #2a2a2a;
+    -fx-control-inner-background: #2a2a2a;
+}
+
+.chord-list .list-cell {
+    -fx-background-color: #2a2a2a;
+    -fx-text-fill: #eaeaea;
+    -fx-padding: 10px;
+}
+
+.chord-list .list-cell:filled:selected {
+    -fx-background-color: #39ff14;
+    -fx-text-fill: #222;
+}
+
+.chord-visualization-container {
+    -fx-background-color: #2a2a2a;
+    -fx-border-color: #39ff14;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 15px;
+}
+
+.chord-visualization {
+    -fx-background-color: #333;
+    -fx-padding: 10px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.chord-details {
+    -fx-background-color: #2a2a2a;
+    -fx-control-inner-background: #2a2a2a;
+    -fx-text-fill: #eaeaea;
+    -fx-font-size: 14px;
+}
+
+.fret-button {
+    -fx-background-color: #444;
+    -fx-text-fill: #eaeaea;
+    -fx-border-color: #666;
+    -fx-border-width: 1px;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+}
+
+.fret-button.chord-note {
+    -fx-background-color: #39ff14;
+    -fx-text-fill: #222;
+    -fx-font-weight: bold;
+}
+
+.white-key {
+    -fx-background-color: #eaeaea;
+    -fx-text-fill: #222;
+    -fx-border-color: #333;
+    -fx-border-width: 1px;
+}
+
+.black-key {
+    -fx-background-color: #222;
+    -fx-text-fill: #eaeaea;
+    -fx-border-color: #666;
+    -fx-border-width: 1px;
+}
+
+.white-key.chord-note {
+    -fx-background-color: #39ff14;
+    -fx-text-fill: #222;
+}
+
+.black-key.chord-note {
+    -fx-background-color: #00a800;
+    -fx-text-fill: #eaeaea;
+}
+
+.play-button {
+    -fx-background-color: #ff6b35;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+}
+
+.play-button:hover {
+    -fx-background-color: #e55a2b;
+}
+
+/* Tuner Styles */
+.tuning-display {
+    -fx-background-color: #2a2a2a;
+    -fx-border-color: #39ff14;
+    -fx-border-width: 2px;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-padding: 30px;
+}
+
+.tuner-label {
+    -fx-text-fill: #bbb;
+    -fx-font-size: 14px;
+}
+
+.current-note {
+    -fx-text-fill: #39ff14;
+    -fx-font-size: 48px;
+    -fx-font-weight: bold;
+}
+
+.frequency-label {
+    -fx-text-fill: #eaeaea;
+    -fx-font-size: 16px;
+}
+
+.target-note {
+    -fx-text-fill: #ff6b35;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.status-label {
+    -fx-text-fill: #eaeaea;
+    -fx-font-size: 16px;
+    -fx-padding: 10px;
+    -fx-background-color: #333;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+}
+
+.tuning-indicator {
+    -fx-stroke-width: 3px;
+}
+
+.tuning-indicator.tuning-neutral {
+    -fx-fill: #666;
+    -fx-stroke: #888;
+}
+
+.tuning-indicator.tuning-flat {
+    -fx-fill: #ff4444;
+    -fx-stroke: #cc3333;
+}
+
+.tuning-indicator.tuning-sharp {
+    -fx-fill: #4444ff;
+    -fx-stroke: #3333cc;
+}
+
+.tuning-indicator.tuning-perfect {
+    -fx-fill: #39ff14;
+    -fx-stroke: #2ecc0f;
+}
+
+.tuning-progress {
+    -fx-accent: #39ff14;
+}
+
+.tuning-low {
+    -fx-text-fill: #ff4444;
+    -fx-font-weight: bold;
+}
+
+.tuning-perfect {
+    -fx-text-fill: #39ff14;
+    -fx-font-weight: bold;
+}
+
+.tuning-high {
+    -fx-text-fill: #4444ff;
+    -fx-font-weight: bold;
+}
+
+.tuning-notes-list {
+    -fx-background-color: #2a2a2a;
+    -fx-control-inner-background: #2a2a2a;
+}
+
+.tuning-notes-list .list-cell {
+    -fx-background-color: #2a2a2a;
+    -fx-text-fill: #eaeaea;
+    -fx-padding: 8px;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.tuning-notes-list .list-cell:filled:selected {
+    -fx-background-color: #39ff14;
+    -fx-text-fill: #222;
+}
+
+.start-button {
+    -fx-background-color: #39ff14;
+    -fx-text-fill: #222;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 24 12 24;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+}
+
+.start-button:hover {
+    -fx-background-color: #2ecc0f;
+}
+
+.stop-button {
+    -fx-background-color: #ff4444;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 24 12 24;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+}
+
+.stop-button:hover {
+    -fx-background-color: #cc3333;
+}
+
+.instructions-text {
+    -fx-background-color: #2a2a2a;
+    -fx-control-inner-background: #2a2a2a;
+    -fx-text-fill: #eaeaea;
+    -fx-font-size: 13px;
+}
+
+/* Tuning Library Styles */
+.tuning-presets-list {
+    -fx-background-color: #2a2a2a;
+    -fx-control-inner-background: #2a2a2a;
+}
+
+.tuning-presets-list .list-cell {
+    -fx-background-color: #2a2a2a;
+    -fx-text-fill: #eaeaea;
+    -fx-padding: 10px;
+}
+
+.tuning-presets-list .list-cell:filled:selected {
+    -fx-background-color: #39ff14;
+    -fx-text-fill: #222;
+}
+
+.tuning-title {
+    -fx-text-fill: #39ff14;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.section-subtitle {
+    -fx-text-fill: #ff6b35;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.tuning-description, .additional-info {
+    -fx-background-color: #2a2a2a;
+    -fx-control-inner-background: #2a2a2a;
+    -fx-text-fill: #eaeaea;
+    -fx-font-size: 14px;
+}
+
+.tuning-notes-grid {
+    -fx-background-color: #333;
+    -fx-padding: 15px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+.string-label {
+    -fx-text-fill: #bbb;
+    -fx-font-size: 14px;
+}
+
+.note-label {
+    -fx-text-fill: #39ff14;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.favorite-button {
+    -fx-background-color: #ffaa00;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 8 16 8 16;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+}
+
+.favorite-button:hover {
+    -fx-background-color: #e09900;
+}
+
+.use-tuner-button {
+    -fx-background-color: #39ff14;
+    -fx-text-fill: #222;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20 10 20;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+}
+
+.use-tuner-button:hover {
+    -fx-background-color: #2ecc0f;
+}
+
+.copy-button {
+    -fx-background-color: #666;
+    -fx-text-fill: #eaeaea;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+}
+
+.copy-button:hover {
+    -fx-background-color: #777;
+}
+
+/* ComboBox Styles */
+.combo-box {
+    -fx-background-color: #2a2a2a;
+    -fx-text-fill: #eaeaea;
+    -fx-border-color: #39ff14;
+    -fx-border-width: 1px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: #2a2a2a;
+    -fx-text-fill: #eaeaea;
+}
+
+.combo-box .list-view {
+    -fx-background-color: #2a2a2a;
+    -fx-control-inner-background: #2a2a2a;
+}
+
+.combo-box .list-view .list-cell:filled:selected {
+    -fx-background-color: #39ff14;
+    -fx-text-fill: #222;
+}
+
+/* CheckBox Styles */
+.check-box {
+    -fx-text-fill: #eaeaea;
+}
+
+.check-box .box {
+    -fx-background-color: #2a2a2a;
+    -fx-border-color: #39ff14;
+    -fx-border-width: 1px;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #39ff14;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: #222;
+}
+
+/* ScrollPane and ScrollBar Styles */
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar {
+    -fx-background-color: #333;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #39ff14;
+    -fx-background-radius: 5px;
+}
+
+.scroll-bar .track {
+    -fx-background-color: #2a2a2a;
+}

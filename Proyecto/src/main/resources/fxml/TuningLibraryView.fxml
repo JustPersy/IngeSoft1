@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.scalia.controllers.TuningLibraryController">
+
+   <children>
+      <BorderPane AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+                  AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+         
+         <!-- Header -->
+         <top>
+            <VBox spacing="10" styleClass="header-section">
+               <padding>
+                  <Insets top="20" bottom="20" left="20" right="20"/>
+               </padding>
+               
+               <HBox alignment="CENTER_LEFT" spacing="20">
+                  <Button fx:id="backButton" text="← Volver" onAction="#goBack" styleClass="back-button"/>
+                  <Text styleClass="page-title" text="🎵 Biblioteca de Afinaciones">
+                     <font>
+                        <Font size="24"/>
+                     </font>
+                  </Text>
+               </HBox>
+               
+               <HBox alignment="CENTER_LEFT" spacing="20">
+                  <Label text="Filtrar por instrumento:"/>
+                  <ComboBox fx:id="instrumentFilterComboBox" prefWidth="200"/>
+                  <CheckBox fx:id="standardOnlyCheckBox" text="Solo afinaciones estándar"/>
+               </HBox>
+            </VBox>
+         </top>
+         
+         <!-- Main content -->
+         <center>
+            <HBox spacing="15">
+               <padding>
+                  <Insets top="10" bottom="20" left="20" right="20"/>
+               </padding>
+               
+               <!-- Left panel - Tuning presets list -->
+               <VBox spacing="10" prefWidth="300" minWidth="300">
+                  <Label text="Afinaciones Disponibles:" styleClass="section-title"/>
+                  <ListView fx:id="tuningPresetsListView" prefHeight="400" styleClass="tuning-presets-list"/>
+               </VBox>
+               
+               <!-- Right panel - Tuning details -->
+               <VBox spacing="15" HBox.hgrow="ALWAYS">
+                  <Label fx:id="tuningNameLabel" text="Selecciona una afinación" styleClass="tuning-title">
+                     <font>
+                        <Font size="20" style="-fx-font-weight: bold"/>
+                     </font>
+                  </Label>
+                  
+                  <VBox spacing="10">
+                     <Label text="Descripción:" styleClass="section-subtitle"/>
+                     <TextArea fx:id="tuningDescriptionArea" 
+                             wrapText="true" 
+                             editable="false"
+                             prefRowCount="3"
+                             styleClass="tuning-description"/>
+                  </VBox>
+                  
+                  <VBox spacing="10">
+                     <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Notas de Afinación:" styleClass="section-subtitle"/>
+                        <Button fx:id="favoriteButton" text="⭐ Agregar a Favoritos" onAction="#toggleFavorite" styleClass="favorite-button"/>
+                     </HBox>
+                     
+                     <GridPane fx:id="tuningNotesGrid" 
+                             hgap="10" vgap="10" 
+                             styleClass="tuning-notes-grid"/>
+                  </VBox>
+                  
+                  <VBox spacing="10">
+                     <Label text="Información Adicional:" styleClass="section-subtitle"/>
+                     <TextArea fx:id="additionalInfoArea" 
+                             wrapText="true" 
+                             editable="false"
+                             prefRowCount="8"
+                             styleClass="additional-info"/>
+                  </VBox>
+                  
+                  <HBox spacing="10" alignment="CENTER_LEFT">
+                     <Button fx:id="useInTunerButton" text="🎧 Usar en Afinador" onAction="#useInTuner" styleClass="use-tuner-button"/>
+                     <Button fx:id="copyNotesButton" text="📋 Copiar Notas" onAction="#copyNotes" styleClass="copy-button"/>
+                  </HBox>
+               </VBox>
+            </HBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

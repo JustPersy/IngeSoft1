@@ -10,7 +10,7 @@ import java.util.List;
 public class InstrumentCategoryDAO {
     public static List<InstrumentCategory> getAllCategories() {
         List<InstrumentCategory> categories = new ArrayList<>();
-        String query = "SELECT * FROM instrument_categories";
+        String query = "SELECT * FROM categories";
         try (Connection conn = DatabaseConnection.getConnection();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(query)) {
@@ -27,7 +27,7 @@ public class InstrumentCategoryDAO {
     }
 
     public static InstrumentCategory getCategoryById(int id) {
-        String query = "SELECT * FROM instrument_categories WHERE id = ?";
+        String query = "SELECT * FROM categories WHERE id = ?";
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.setInt(1, id);
@@ -43,7 +43,7 @@ public class InstrumentCategoryDAO {
     }
 
     public static boolean createCategory(String name) {
-        String query = "INSERT INTO instrument_categories (name) VALUES (?)";
+        String query = "INSERT INTO categories (name) VALUES (?)";
         try (Connection conn = DatabaseConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.setString(1, name);

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.scalia.controllers.ChordController">
+
+   <children>
+      <BorderPane AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+                  AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+         
+         <!-- Header -->
+         <top>
+            <VBox spacing="10" styleClass="header-section">
+               <padding>
+                  <Insets top="20" bottom="20" left="20" right="20"/>
+               </padding>
+               
+               <HBox alignment="CENTER_LEFT" spacing="20">
+                  <Button fx:id="backButton" text="← Volver" onAction="#goBack" styleClass="back-button"/>
+                  <Text styleClass="page-title" text="🔊 Visualizador de Acordes">
+                     <font>
+                        <Font size="24"/>
+                     </font>
+                  </Text>
+               </HBox>
+               
+               <HBox alignment="CENTER_LEFT" spacing="20">
+                  <Label text="Instrumento:"/>
+                  <ComboBox fx:id="instrumentComboBox" prefWidth="200"/>
+                  <Button fx:id="playChordButton" text="▶ Reproducir Acorde" onAction="#playChord" styleClass="play-button"/>
+               </HBox>
+            </VBox>
+         </top>
+         
+         <!-- Main content -->
+         <center>
+            <HBox spacing="15">
+               <padding>
+                  <Insets top="10" bottom="20" left="20" right="20"/>
+               </padding>
+               
+               <!-- Left panel - Chord list -->
+               <VBox spacing="10" prefWidth="250" minWidth="250">
+                  <Label text="Acordes Disponibles:" styleClass="section-title"/>
+                  <ListView fx:id="chordListView" prefHeight="400" styleClass="chord-list"/>
+               </VBox>
+               
+               <!-- Center panel - Chord visualization -->
+               <VBox spacing="10" prefWidth="400" minWidth="400">
+                  <Label fx:id="chordNameLabel" text="Selecciona un acorde" styleClass="chord-title">
+                     <font>
+                        <Font size="20" style="-fx-font-weight: bold"/>
+                     </font>
+                  </Label>
+                  
+                  <VBox fx:id="chordContainer" spacing="10" styleClass="chord-visualization-container">
+                     <Label text="Visualización del Acorde:" styleClass="visualization-label"/>
+                     <ScrollPane fitToWidth="true" fitToHeight="true" prefHeight="300">
+                        <content>
+                           <GridPane fx:id="chordVisualizationPane" 
+                                   hgap="5" vgap="5" 
+                                   alignment="CENTER"
+                                   styleClass="chord-visualization"/>
+                        </content>
+                     </ScrollPane>
+                  </VBox>
+               </VBox>
+               
+               <!-- Right panel - Chord details -->
+               <VBox spacing="10" HBox.hgrow="ALWAYS">
+                  <Label text="Detalles del Acorde:" styleClass="section-title"/>
+                  
+                  <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+                     <content>
+                        <TextArea fx:id="chordDetailsArea" 
+                                wrapText="true" 
+                                editable="false"
+                                prefRowCount="15"
+                                styleClass="chord-details"/>
+                     </content>
+                  </ScrollPane>
+               </VBox>
+            </HBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

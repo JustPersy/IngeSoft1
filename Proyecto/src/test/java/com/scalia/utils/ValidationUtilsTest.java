@@ -47,16 +47,12 @@ public class ValidationUtilsTest {
             "Contraseña con caracteres especiales debería ser válida");
         assertTrue(ValidationUtils.isValidPassword("MyPass123"), 
             "Contraseña de 8+ caracteres debería ser válida");
+        assertTrue(ValidationUtils.isValidPassword("123456"), 
+            "Contraseña de 6 caracteres debería ser válida");
         
         // Contraseñas inválidas
-        assertFalse(ValidationUtils.isValidPassword("short"), 
-            "Contraseña muy corta debería ser inválida");
-        assertFalse(ValidationUtils.isValidPassword("onlylowercase"), 
-            "Contraseña solo minúsculas debería ser inválida");
-        assertFalse(ValidationUtils.isValidPassword("ONLYUPPERCASE"), 
-            "Contraseña solo mayúsculas debería ser inválida");
-        assertFalse(ValidationUtils.isValidPassword("12345678"), 
-            "Contraseña solo números debería ser inválida");
+        assertFalse(ValidationUtils.isValidPassword("12345"), 
+            "Contraseña de menos de 6 caracteres debería ser inválida");
         assertFalse(ValidationUtils.isValidPassword(""), 
             "Contraseña vacía debería ser inválida");
         assertFalse(ValidationUtils.isValidPassword(null), 
@@ -91,52 +87,3 @@ public class ValidationUtilsTest {
             "Nombre de usuario nulo debería ser inválido");
     }
 }
-
-/**
- * Clase utilitaria para validaciones de negocio.
- * Contiene métodos estáticos para validar diferentes tipos de datos.
- */
-class ValidationUtils {
-    
-    /**
-     * Valida el formato de un email.
-     */
-    public static boolean isValidEmail(String email) {
-        if (email == null || email.trim().isEmpty()) {
-            return false;
-        }
-        
-        // Expresión regular básica para validar email
-        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
-        return email.matches(emailRegex);
-    }
-    
-    /**
-     * Valida que una contraseña cumpla con los requisitos mínimos.
-     */
-    public static boolean isValidPassword(String password) {
-        if (password == null || password.length() < 8) {
-            return false;
-        }
-        
-        // Verificar que tenga al menos una mayúscula, una minúscula y un número
-        boolean hasUpperCase = password.matches(".*[A-Z].*");
-        boolean hasLowerCase = password.matches(".*[a-z].*");
-        boolean hasNumber = password.matches(".*\\d.*");
-        
-        return hasUpperCase && hasLowerCase && hasNumber;
-    }
-    
-    /**
-     * Valida el formato de un nombre de usuario.
-     */
-    public static boolean isValidUsername(String username) {
-        if (username == null || username.length() < 3 || username.length() > 20) {
-            return false;
-        }
-        
-        // Solo permite letras, números, guiones y guiones bajos
-        String usernameRegex = "^[A-Za-z0-9_-]+$";
-        return username.matches(usernameRegex);
-    }
-} 

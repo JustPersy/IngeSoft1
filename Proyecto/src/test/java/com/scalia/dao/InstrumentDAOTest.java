@@ -29,13 +29,16 @@ public class InstrumentDAOTest {
         try (Connection conn = DatabaseConnection.getConnection();
              Statement stmt = conn.createStatement()) {
 
-            // Eliminar datos existentes y reiniciar AUTO_INCREMENT
+            // Eliminar todos los presets de afinación y acordes primero
+            stmt.execute("DELETE FROM tuning_presets");
+            stmt.execute("DELETE FROM chords");
+            // Eliminar todos los instrumentos
             stmt.execute("DELETE FROM instruments");
             stmt.execute("ALTER TABLE instruments AUTO_INCREMENT = 1");
 
             // Insertar solo los datos de prueba mínimos necesarios para esta suite
-            stmt.execute("INSERT INTO instruments (name, type, description, tuning_standard) VALUES ('Guitarra Acústica', 'String', 'Guitarra acústica de 6 cuerdas', 'EADGBE')");
-            stmt.execute("INSERT INTO instruments (name, type, description, tuning_standard) VALUES ('Piano', 'Keyboard', 'Piano de 88 teclas', NULL)");
+            stmt.execute("INSERT INTO instruments (name, family, description) VALUES ('Guitarra Acústica', 'String', 'Guitarra acústica de 6 cuerdas')");
+            stmt.execute("INSERT INTO instruments (name, family, description) VALUES ('Piano', 'Keyboard', 'Piano de 88 teclas')");
         } catch (SQLException e) {
             // Si hay un error aquí, es un problema serio de configuración de DB o conexión
             fail("Error al preparar la base de datos para la prueba (setUp): " + e.getMessage());
@@ -46,6 +49,9 @@ public class InstrumentDAOTest {
     void tearDown() {
         try (Connection conn = DatabaseConnection.getConnection();
              Statement stmt = conn.createStatement()) {
+            // Eliminar todos los datos en orden correcto
+            stmt.execute("DELETE FROM tuning_presets");
+            stmt.execute("DELETE FROM chords");
             stmt.execute("DELETE FROM instruments");
             stmt.execute("ALTER TABLE instruments AUTO_INCREMENT = 1");
         } catch (SQLException e) {
@@ -71,7 +77,6 @@ public class InstrumentDAOTest {
         assertNotNull(guitar, "Guitarra Acústica debe estar en la lista.");
         assertEquals("String", guitar.getType());
         assertEquals("Guitarra acústica de 6 cuerdas", guitar.getDescription());
-        assertEquals("EADGBE", guitar.getTuningStandard());
 
         // Verificar el segundo instrumento (Piano)
         Instrument piano = instruments.stream()

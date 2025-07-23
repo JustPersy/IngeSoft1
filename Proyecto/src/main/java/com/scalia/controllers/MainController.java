@@ -19,7 +19,22 @@ public class MainController {
 
     @FXML
     private void openTheory() {
-        showModuleMessage("Teoría Musical", "Módulo de teoría musical en desarrollo");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/TheoryView.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = Main.getPrimaryStage();
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("/css/styles.css").toExternalForm());
+
+            stage.setScene(scene);
+            stage.setTitle("Scalia - Teoría Musical");
+            stage.setMaximized(true);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            showModuleMessage("Error", "No se pudo cargar el módulo de Teoría Musical.");
+        }
     }
 
     @FXML
@@ -44,17 +59,62 @@ public class MainController {
 
     @FXML
     private void openChords() {
-        showModuleMessage("Acordes", "Visualizador de acordes en desarrollo");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ChordView.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = Main.getPrimaryStage();
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("/css/styles.css").toExternalForm());
+
+            stage.setScene(scene);
+            stage.setTitle("Scalia - Visualizador de Acordes");
+            stage.setMaximized(true);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            showModuleMessage("Error", "No se pudo cargar el visualizador de acordes.");
+        }
     }
 
     @FXML
     private void openTuner() {
-        showModuleMessage("Afinador", "Afinador de instrumentos en desarrollo");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/TunerView.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = Main.getPrimaryStage();
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("/css/styles.css").toExternalForm());
+
+            stage.setScene(scene);
+            stage.setTitle("Scalia - Afinador");
+            stage.setMaximized(true);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            showModuleMessage("Error", "No se pudo cargar el afinador.");
+        }
     }
 
     @FXML
     private void openTunings() {
-        showModuleMessage("Afinaciones", "Biblioteca de afinaciones en desarrollo");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/TuningLibraryView.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = Main.getPrimaryStage();
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("/css/styles.css").toExternalForm());
+
+            stage.setScene(scene);
+            stage.setTitle("Scalia - Biblioteca de Afinaciones");
+            stage.setMaximized(true);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            showModuleMessage("Error", "No se pudo cargar la biblioteca de afinaciones.");
+        }
     }
 
     @FXML

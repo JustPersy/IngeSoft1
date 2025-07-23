@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.scalia.controllers.TheoryController">
+
+   <children>
+      <BorderPane AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+                  AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+         
+         <!-- Header -->
+         <top>
+            <VBox spacing="10" styleClass="header-section">
+               <padding>
+                  <Insets top="20" bottom="20" left="20" right="20"/>
+               </padding>
+               
+               <HBox alignment="CENTER_LEFT" spacing="20">
+                  <Button fx:id="backButton" text="← Volver" onAction="#goBack" styleClass="back-button"/>
+                  <Text styleClass="page-title" text="🎼 Teoría Musical">
+                     <font>
+                        <Font size="24"/>
+                     </font>
+                  </Text>
+               </HBox>
+               
+               <HBox alignment="CENTER_LEFT" spacing="10">
+                  <Label text="Filtrar por dificultad:"/>
+                  <ComboBox fx:id="difficultyComboBox" prefWidth="150"/>
+               </HBox>
+            </VBox>
+         </top>
+         
+         <!-- Main content -->
+         <center>
+            <HBox spacing="10">
+               <padding>
+                  <Insets top="10" bottom="20" left="20" right="20"/>
+               </padding>
+               
+               <!-- Left panel - Categories -->
+               <VBox spacing="10" prefWidth="200" minWidth="200">
+                  <Label text="Categorías:" styleClass="section-title"/>
+                  <ListView fx:id="categoryListView" prefHeight="400" styleClass="category-list"/>
+               </VBox>
+               
+               <!-- Middle panel - Content list -->
+               <VBox spacing="10" prefWidth="250" minWidth="250">
+                  <Label text="Lecciones:" styleClass="section-title"/>
+                  <ListView fx:id="contentListView" prefHeight="400" styleClass="content-list"/>
+               </VBox>
+               
+               <!-- Right panel - Content display -->
+               <VBox spacing="10" HBox.hgrow="ALWAYS">
+                  <Label fx:id="titleLabel" text="Selecciona una lección" styleClass="content-title">
+                     <font>
+                        <Font size="18" style="-fx-font-weight: bold"/>
+                     </font>
+                  </Label>
+                  
+                  <ScrollPane fx:id="contentScrollPane" fitToWidth="true" VBox.vgrow="ALWAYS">
+                     <content>
+                        <VBox fx:id="contentContainer" spacing="10">
+                           <TextArea fx:id="contentTextArea" 
+                                   wrapText="true" 
+                                   editable="false"
+                                   prefRowCount="20"
+                                   styleClass="content-text"/>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </VBox>
+            </HBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
