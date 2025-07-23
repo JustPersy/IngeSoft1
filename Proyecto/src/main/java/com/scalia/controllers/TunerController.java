@@ -4,15 +4,29 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import com.scalia.Main;
 
 import java.io.IOException;
+import java.util.Random;
 
 /**
- * Placeholder controller for the tuner module.
+ * Very basic tuner controller that randomly displays detected notes.
  */
 public class TunerController {
+
+    @FXML
+    private Label noteLabel;
+
+    private final Random random = new Random();
+    private static final String[] NOTES = {"C", "D", "E", "F", "G", "A", "B"};
+
+    @FXML
+    private void handleDetectNote() {
+        String note = NOTES[random.nextInt(NOTES.length)];
+        noteLabel.setText("Nota detectada: " + note);
+    }
 
     @FXML
     private void handleBackToMainMenu() {

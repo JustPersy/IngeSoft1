@@ -77,4 +77,4 @@ INSERT INTO instruments (name, category_id, family, description) VALUES
 INSERT INTO users (username, email, password, first_name, last_name) VALUES
 ('testuser', 'test@example.com', 'test123', 'Test', 'User');
 
-select * from users;
+

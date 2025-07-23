@@ -67,14 +67,9 @@ Relaciones clave:
 
 ---
 
-## 🚧 En desarrollo
+## ✅ Estado del proyecto
 
-Actualmente se están ejecutando las siguientes tareas:
-- Diseño de la base de datos (modelo ER y físico).
-- Configuración del entorno JavaFX.
-- Conexión con base de datos local vía JDBC.
-- Implementación de ventanas base: login, navegación principal, visualizador de instrumentos.
-- Creación de vistas iniciales para acordes, afinador, teoría, afinaciones y gestión de usuarios.
+Todas las características descritas se han implementado y la aplicación se encuentra lista para su uso. Incluye conexión a la base de datos MySQL, ventanas completas para cada módulo y pruebas unitarias.
 
 ---
 
