@@ -11,6 +11,7 @@ DROP TABLE IF EXISTS tunings;
 DROP TABLE IF EXISTS chords;
 DROP TABLE IF EXISTS theory_concepts;
 DROP TABLE IF EXISTS instruments;
+DROP TABLE IF EXISTS instrument_categories;
 -- END: Drop tables
 
 -- Tabla de categorías de instrumentos
@@ -114,8 +115,19 @@ INSERT INTO instruments (name, type, description, tuning_standard, category_id) 
 ('Guitarra Acústica', 'String', 'Guitarra acústica de 6 cuerdas', 'EADGBE', 2),
 ('Guitarra Eléctrica', 'String', 'Guitarra eléctrica de 6 cuerdas', 'EADGBE', 2),
 ('Piano', 'Keyboard', 'Piano acústico de 88 teclas', NULL, 6),
-('Bajo', 'String', 'Bajo eléctrico de 4 cuerdas', 'EADG', 2),
-('Guitarra', 'String', 'Guitarra clásica de 6 cuerdas', 'EADGBE', 2);
+('Bajo Eléctrico', 'String', 'Bajo eléctrico de 4 cuerdas', 'EADG', 2),
+('Guitarra Clásica', 'String', 'Guitarra clásica de 6 cuerdas', 'EADGBE', 2),
+('Violín', 'String', 'Instrumento de cuerda frotada de 4 cuerdas', 'GDAE', 1),
+('Violonchelo', 'String', 'Instrumento de cuerda frotada de 4 cuerdas', 'CGDA', 1),
+('Flauta Travesera', 'Wind', 'Instrumento de viento madera', NULL, 3),
+('Clarinete', 'Wind', 'Instrumento de viento madera', NULL, 3),
+('Trompeta', 'Brass', 'Instrumento de viento metal', NULL, 4),
+('Batería', 'Percussion', 'Conjunto de instrumentos de percusión', NULL, 5),
+('Ukelele', 'String', 'Instrumento de cuerda pulsada de 4 cuerdas', 'GCEA', 2),
+('Mandolina', 'String', 'Instrumento de cuerda pulsada de 8 cuerdas', 'GDAE', 2),
+('Sintetizador', 'Electronic', 'Instrumento electrónico con diversas formas de onda', NULL, 7),
+('Acordeón', 'Free-reed aerophone', 'Instrumento de viento con fuelle y teclado/botones', NULL, 6);
+
 
 INSERT INTO theory_concepts (name, category, description, difficulty_level) VALUES
 ('Notas Musicales', 'Fundamentos', 'Las siete notas básicas de la música: Do, Re, Mi, Fa, Sol, La, Si', 'beginner'),
